@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% load static %}
+    <meta charset="utf-8">
+    <title>Belt Exam</title>
+    <link rel= 'stylesheet' type= 'text/css' href= "{% static 'belt/index.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  </head>
+  <body>
+    <div id= "container">
+      <a href="/logout">Logout</a>
+      <a href="/travels">Home</a>
+      <h1>{{trip.destination}}!</h1>
+      <h3>Planned By: {{trip.createdby}}</h3>
+      <h3>description: {{trip.description}}</h3>
+      <h3>Travel Date From: {{trip.travelstart}}</h3>
+      <h3>Travel Date End: {{trip.travelend}}</h3>
+      <h2><a href= "/travels">Home</a><h2>
+        <h1>Other users joining the trip:</h1>
+        {% for user in users %}
+        <p>{{user.name}}</p>
+        {% endfor %}
+  </div>
+  </body>
+</html>
